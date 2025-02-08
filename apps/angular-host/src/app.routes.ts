@@ -3,7 +3,7 @@ import { Routes } from "@angular/router";
 export default [
   {
     path: "home",
-    loadComponent: () => import("remote/remote-app"),
+    loadChildren: () => import("remote/remote-app"),
   },
   {
     redirectTo: "home",

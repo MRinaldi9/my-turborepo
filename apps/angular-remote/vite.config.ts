@@ -10,7 +10,7 @@ export default defineConfig({
       filename: "remoteEntry.js",
       name: "remote",
       exposes: {
-        "./remote-app": "./src/app.ts",
+        "./remote-app": "./src/app.routes.ts",
       },
       shared: {
         rxjs: "rxjs",

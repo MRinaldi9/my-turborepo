@@ -1,10 +1,11 @@
+import { APP_BASE_HREF } from "@angular/common";
 import { Component, inject } from "@angular/core";
-import { provideRouter, Router, RouterLink, RouterOutlet } from "@angular/router";
+import { Router, RouterLink, RouterOutlet } from "@angular/router";
 
 @Component({
   selector: "app-root",
   imports: [RouterOutlet, RouterLink],
-  providers: [],
+  providers: [{ provide: APP_BASE_HREF, useValue: "/home" }],
   template: `
     <p>Internal Remote</p>
     <a routerLink="path1">Path1</a>
