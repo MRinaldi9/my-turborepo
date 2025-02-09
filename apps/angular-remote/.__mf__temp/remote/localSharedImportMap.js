@@ -8,13 +8,18 @@
           return pkg
         }
       ,
+        "@angular/compiler": async () => {
+          let pkg = await import("__mf__virtual/remote__prebuild___mf_0_angular_mf_1_compiler__prebuild__.js")
+          return pkg
+        }
+      ,
         "zone.js": async () => {
           let pkg = await import("__mf__virtual/remote__prebuild__zone_mf_3_js__prebuild__.js")
           return pkg
         }
       ,
-        "@angular/common": async () => {
-          let pkg = await import("__mf__virtual/remote__prebuild___mf_0_angular_mf_1_common__prebuild__.js")
+        "@angular/platform-browser": async () => {
+          let pkg = await import("__mf__virtual/remote__prebuild___mf_0_angular_mf_1_platform_mf_2_browser__prebuild__.js")
           return pkg
         }
       ,
@@ -25,6 +30,11 @@
       ,
         "@angular/router": async () => {
           let pkg = await import("__mf__virtual/remote__prebuild___mf_0_angular_mf_1_router__prebuild__.js")
+          return pkg
+        }
+      ,
+        "@angular/common": async () => {
+          let pkg = await import("__mf__virtual/remote__prebuild___mf_0_angular_mf_1_common__prebuild__.js")
           return pkg
         }
       
@@ -57,6 +67,32 @@
             }
           }
         ,
+          "@angular/compiler": {
+            name: "@angular/compiler",
+            version: "19.1.5",
+            scope: ["default"],
+            loaded: false,
+            from: "remote",
+            async get () {
+              usedShared["@angular/compiler"].loaded = true
+              const {"@angular/compiler": pkgDynamicImport} = importMap 
+              const res = await pkgDynamicImport()
+              const exportModule = {...res}
+              // All npm packages pre-built by vite will be converted to esm
+              Object.defineProperty(exportModule, "__esModule", {
+                value: true,
+                enumerable: false
+              })
+              return function () {
+                return exportModule
+              }
+            },
+            shareConfig: {
+              singleton: true,
+              requiredVersion: "^19.1.5"
+            }
+          }
+        ,
           "zone.js": {
             name: "zone.js",
             version: "0.15.0",
@@ -83,15 +119,15 @@
             }
           }
         ,
-          "@angular/common": {
-            name: "@angular/common",
+          "@angular/platform-browser": {
+            name: "@angular/platform-browser",
             version: "19.1.5",
             scope: ["default"],
             loaded: false,
             from: "remote",
             async get () {
-              usedShared["@angular/common"].loaded = true
-              const {"@angular/common": pkgDynamicImport} = importMap 
+              usedShared["@angular/platform-browser"].loaded = true
+              const {"@angular/platform-browser": pkgDynamicImport} = importMap 
               const res = await pkgDynamicImport()
               const exportModule = {...res}
               // All npm packages pre-built by vite will be converted to esm
@@ -130,7 +166,7 @@
               }
             },
             shareConfig: {
-              singleton: false,
+              singleton: true,
               requiredVersion: "^19.1.5"
             }
           }
@@ -144,6 +180,32 @@
             async get () {
               usedShared["@angular/router"].loaded = true
               const {"@angular/router": pkgDynamicImport} = importMap 
+              const res = await pkgDynamicImport()
+              const exportModule = {...res}
+              // All npm packages pre-built by vite will be converted to esm
+              Object.defineProperty(exportModule, "__esModule", {
+                value: true,
+                enumerable: false
+              })
+              return function () {
+                return exportModule
+              }
+            },
+            shareConfig: {
+              singleton: true,
+              requiredVersion: "^19.1.5"
+            }
+          }
+        ,
+          "@angular/common": {
+            name: "@angular/common",
+            version: "19.1.5",
+            scope: ["default"],
+            loaded: false,
+            from: "remote",
+            async get () {
+              usedShared["@angular/common"].loaded = true
+              const {"@angular/common": pkgDynamicImport} = importMap 
               const res = await pkgDynamicImport()
               const exportModule = {...res}
               // All npm packages pre-built by vite will be converted to esm

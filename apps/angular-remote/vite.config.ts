@@ -15,9 +15,20 @@ export default defineConfig({
       shared: {
         rxjs: "rxjs",
         "zone.js": { name: "zone.js", singleton: true },
-        "@angular/core": "@angular/core",
+        "@angular/core": { name: "@angular/core", singleton: true },
         "@angular/router": { name: "@angular/router", singleton: true },
         "@angular/common": { name: "@angular/common", singleton: true },
+        "@angular/animations": { name: "@angular/animations", singleton: true },
+        "@angular/compiler": { name: "@angular/compiler", singleton: true },
+        "@angular/forms": { name: "@angular/forms", singleton: true },
+        "@angular/platform-browser": {
+          name: "@angular/platform-browser",
+          singleton: true,
+        },
+        "@angular/platform-browser-dynamic": {
+          name: "@angular/platform-browser-dynamic",
+          singleton: true,
+        },
       },
       remotes: {},
     }),

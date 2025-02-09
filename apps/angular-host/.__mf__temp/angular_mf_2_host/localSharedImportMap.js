@@ -8,6 +8,16 @@
           return pkg
         }
       ,
+        "@angular/compiler": async () => {
+          let pkg = await import("__mf__virtual/angular_mf_2_host__prebuild___mf_0_angular_mf_1_compiler__prebuild__.js")
+          return pkg
+        }
+      ,
+        "@angular/platform-browser": async () => {
+          let pkg = await import("__mf__virtual/angular_mf_2_host__prebuild___mf_0_angular_mf_1_platform_mf_2_browser__prebuild__.js")
+          return pkg
+        }
+      ,
         "@angular/router": async () => {
           let pkg = await import("__mf__virtual/angular_mf_2_host__prebuild___mf_0_angular_mf_1_router__prebuild__.js")
           return pkg
@@ -54,6 +64,58 @@
             shareConfig: {
               singleton: false,
               requiredVersion: "^7.8.1"
+            }
+          }
+        ,
+          "@angular/compiler": {
+            name: "@angular/compiler",
+            version: "19.1.5",
+            scope: ["default"],
+            loaded: false,
+            from: "angular-host",
+            async get () {
+              usedShared["@angular/compiler"].loaded = true
+              const {"@angular/compiler": pkgDynamicImport} = importMap 
+              const res = await pkgDynamicImport()
+              const exportModule = {...res}
+              // All npm packages pre-built by vite will be converted to esm
+              Object.defineProperty(exportModule, "__esModule", {
+                value: true,
+                enumerable: false
+              })
+              return function () {
+                return exportModule
+              }
+            },
+            shareConfig: {
+              singleton: true,
+              requiredVersion: "^19.1.5"
+            }
+          }
+        ,
+          "@angular/platform-browser": {
+            name: "@angular/platform-browser",
+            version: "19.1.5",
+            scope: ["default"],
+            loaded: false,
+            from: "angular-host",
+            async get () {
+              usedShared["@angular/platform-browser"].loaded = true
+              const {"@angular/platform-browser": pkgDynamicImport} = importMap 
+              const res = await pkgDynamicImport()
+              const exportModule = {...res}
+              // All npm packages pre-built by vite will be converted to esm
+              Object.defineProperty(exportModule, "__esModule", {
+                value: true,
+                enumerable: false
+              })
+              return function () {
+                return exportModule
+              }
+            },
+            shareConfig: {
+              singleton: true,
+              requiredVersion: "^19.1.5"
             }
           }
         ,
@@ -130,7 +192,7 @@
               }
             },
             shareConfig: {
-              singleton: false,
+              singleton: true,
               requiredVersion: "^19.1.5"
             }
           }
@@ -168,6 +230,13 @@
                   name: "remote",
                   type: "module",
                   entry: "http://localhost:5174/remoteEntry.js",
+                }
+          ,
+                {
+                  entryGlobalName: "@common-store",
+                  name: "@common-store",
+                  type: "module",
+                  entry: "http://localhost:5176/remoteEntry.js",
                 }
           
       ]

@@ -6,6 +6,10 @@ export default [
     loadChildren: () => import("remote/remote-app"),
   },
   {
+    path: "test",
+    loadChildren: () => import("./test/test.routes"),
+  },
+  {
     redirectTo: "home",
     pathMatch: "full",
     path: "",
