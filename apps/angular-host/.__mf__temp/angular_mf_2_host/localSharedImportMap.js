@@ -69,7 +69,7 @@
         ,
           "@angular/compiler": {
             name: "@angular/compiler",
-            version: "19.1.5",
+            version: "19.1.6",
             scope: ["default"],
             loaded: false,
             from: "angular-host",
@@ -89,13 +89,13 @@
             },
             shareConfig: {
               singleton: true,
-              requiredVersion: "^19.1.5"
+              requiredVersion: "^19.1.6"
             }
           }
         ,
           "@angular/platform-browser": {
             name: "@angular/platform-browser",
-            version: "19.1.5",
+            version: "19.1.6",
             scope: ["default"],
             loaded: false,
             from: "angular-host",
@@ -115,13 +115,13 @@
             },
             shareConfig: {
               singleton: true,
-              requiredVersion: "^19.1.5"
+              requiredVersion: "^19.1.6"
             }
           }
         ,
           "@angular/router": {
             name: "@angular/router",
-            version: "19.1.5",
+            version: "19.1.6",
             scope: ["default"],
             loaded: false,
             from: "angular-host",
@@ -141,7 +141,7 @@
             },
             shareConfig: {
               singleton: true,
-              requiredVersion: "^19.1.5"
+              requiredVersion: "^19.1.6"
             }
           }
         ,
@@ -173,7 +173,7 @@
         ,
           "@angular/core": {
             name: "@angular/core",
-            version: "19.1.5",
+            version: "19.1.6",
             scope: ["default"],
             loaded: false,
             from: "angular-host",
@@ -193,13 +193,13 @@
             },
             shareConfig: {
               singleton: true,
-              requiredVersion: "^19.1.5"
+              requiredVersion: "^19.1.6"
             }
           }
         ,
           "@angular/common": {
             name: "@angular/common",
-            version: "19.1.5",
+            version: "19.1.6",
             scope: ["default"],
             loaded: false,
             from: "angular-host",
@@ -219,7 +219,7 @@
             },
             shareConfig: {
               singleton: true,
-              requiredVersion: "^19.1.5"
+              requiredVersion: "^19.1.6"
             }
           }
         
@@ -230,6 +230,7 @@
                   name: "remote",
                   type: "module",
                   entry: "http://localhost:5174/remoteEntry.js",
+                  shareScope: "default",
                 }
           ,
                 {
@@ -237,6 +238,7 @@
                   name: "@common-store",
                   type: "module",
                   entry: "http://localhost:5176/remoteEntry.js",
+                  shareScope: "default",
                 }
           
       ]
