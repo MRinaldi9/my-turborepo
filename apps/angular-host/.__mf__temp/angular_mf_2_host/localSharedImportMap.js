@@ -28,6 +28,11 @@
           return pkg
         }
       ,
+        "@angular/common/http": async () => {
+          let pkg = await import("__mf__virtual/angular_mf_2_host__prebuild___mf_0_angular_mf_1_common_mf_1_http__prebuild__.js")
+          return pkg
+        }
+      ,
         "@angular/core": async () => {
           let pkg = await import("__mf__virtual/angular_mf_2_host__prebuild___mf_0_angular_mf_1_core__prebuild__.js")
           return pkg
@@ -69,7 +74,7 @@
         ,
           "@angular/compiler": {
             name: "@angular/compiler",
-            version: "19.1.6",
+            version: "20.1.3",
             scope: ["default"],
             loaded: false,
             from: "angular-host",
@@ -89,13 +94,13 @@
             },
             shareConfig: {
               singleton: true,
-              requiredVersion: "^19.1.6"
+              requiredVersion: "^20.1.3"
             }
           }
         ,
           "@angular/platform-browser": {
             name: "@angular/platform-browser",
-            version: "19.1.6",
+            version: "20.1.3",
             scope: ["default"],
             loaded: false,
             from: "angular-host",
@@ -115,13 +120,13 @@
             },
             shareConfig: {
               singleton: true,
-              requiredVersion: "^19.1.6"
+              requiredVersion: "^20.1.3"
             }
           }
         ,
           "@angular/router": {
             name: "@angular/router",
-            version: "19.1.6",
+            version: "20.1.3",
             scope: ["default"],
             loaded: false,
             from: "angular-host",
@@ -141,7 +146,7 @@
             },
             shareConfig: {
               singleton: true,
-              requiredVersion: "^19.1.6"
+              requiredVersion: "^20.1.3"
             }
           }
         ,
@@ -171,9 +176,35 @@
             }
           }
         ,
+          "@angular/common/http": {
+            name: "@angular/common/http",
+            version: "20.1.3",
+            scope: ["default"],
+            loaded: false,
+            from: "angular-host",
+            async get () {
+              usedShared["@angular/common/http"].loaded = true
+              const {"@angular/common/http": pkgDynamicImport} = importMap 
+              const res = await pkgDynamicImport()
+              const exportModule = {...res}
+              // All npm packages pre-built by vite will be converted to esm
+              Object.defineProperty(exportModule, "__esModule", {
+                value: true,
+                enumerable: false
+              })
+              return function () {
+                return exportModule
+              }
+            },
+            shareConfig: {
+              singleton: true,
+              requiredVersion: "^20.1.3"
+            }
+          }
+        ,
           "@angular/core": {
             name: "@angular/core",
-            version: "19.1.6",
+            version: "20.1.3",
             scope: ["default"],
             loaded: false,
             from: "angular-host",
@@ -193,13 +224,13 @@
             },
             shareConfig: {
               singleton: true,
-              requiredVersion: "^19.1.6"
+              requiredVersion: "^20.1.3"
             }
           }
         ,
           "@angular/common": {
             name: "@angular/common",
-            version: "19.1.6",
+            version: "20.1.3",
             scope: ["default"],
             loaded: false,
             from: "angular-host",
@@ -219,7 +250,7 @@
             },
             shareConfig: {
               singleton: true,
-              requiredVersion: "^19.1.6"
+              requiredVersion: "^20.1.3"
             }
           }
         
@@ -234,10 +265,10 @@
                 }
           ,
                 {
-                  entryGlobalName: "@common-store",
-                  name: "@common-store",
+                  entryGlobalName: "solid-header",
+                  name: "solid-header",
                   type: "module",
-                  entry: "http://localhost:5176/remoteEntry.js",
+                  entry: "http://localhost:5175/remoteEntry.js",
                   shareScope: "default",
                 }
           

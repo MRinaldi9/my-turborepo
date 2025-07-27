@@ -9,26 +9,25 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@angular/animations": "^19.1.6",
-    "@angular/common": "^19.1.6",
-    "@angular/compiler": "^19.1.6",
-    "@angular/core": "^19.1.6",
-    "@angular/forms": "^19.1.6",
-    "@angular/platform-browser": "^19.1.6",
-    "@angular/platform-browser-dynamic": "^19.1.6",
-    "@angular/router": "^19.1.6",
+    "@angular/common": "catalog:angular-20",
+    "@angular/compiler": "catalog:angular-20",
+    "@angular/core": "catalog:angular-20",
+    "@angular/forms": "catalog:angular-20",
+    "@angular/platform-browser": "catalog:angular-20",
+    "@angular/platform-browser-dynamic": "catalog:angular-20",
+    "@angular/router": "catalog:angular-20",
     "rxjs": "~7.8.1",
     "tslib": "^2.8.1",
-    "zone.js": "~0.15.0"
+    "zone.js": "~0.15.0",
+    "@repo/orchestrator": "workspace:*"
   },
   "devDependencies": {
-    "@analogjs/vite-plugin-angular": "^1.13.0",
-    "@angular-devkit/build-angular": "^19.1.7",
-    "@angular/cli": "^19.1.7",
-    "@angular/compiler-cli": "^19.1.6",
+    "@analogjs/vite-plugin-angular": "catalog:angular-20",
+    "@angular/build": "catalog:angular-20",
+    "@angular/compiler-cli": "catalog:angular-20",
     "@repo/typescript-config": "workspace:*",
-    "typescript": "~5.7.2",
-    "vite": "^5.4.14",
-    "@module-federation/vite": "^1.2.2"
+    "typescript": "~5.8.3",
+    "vite": "catalog:vite-7",
+    "@module-federation/vite": "catalog:vite-7"
   }
 }

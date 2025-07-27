@@ -1,13 +1,10 @@
 /// <reference types="vitest" />
 import angular from "@analogjs/vite-plugin-angular";
 import { federation } from "@module-federation/vite";
-import { log } from "console";
-import { resolve } from "path";
 import { defineConfig } from "vite";
+import { resolve } from "node:path";
 
 export default defineConfig(({ mode }) => {
-  log(resolve(__dirname, "./src/__mocks__/@common-store/auth.ts"));
-
   return {
     root: __dirname,
     plugins: [
@@ -26,6 +23,10 @@ export default defineConfig(({ mode }) => {
                 },
                 "@angular/common": {
                   name: "@angular/common",
+                  singleton: true,
+                },
+                "@angular/common/http": {
+                  name: "@angular/common/http",
                   singleton: true,
                 },
                 "@angular/animations": {
@@ -54,11 +55,11 @@ export default defineConfig(({ mode }) => {
                   entryGlobalName: "remote",
                   shareScope: "default",
                 },
-                "@common-store": {
+                "solid-header": {
                   type: "module",
-                  name: "@common-store",
-                  entry: "http://localhost:5176/remoteEntry.js",
-                  entryGlobalName: "@common-store",
+                  name: "solid-header",
+                  entry: "http://localhost:5175/remoteEntry.js",
+                  entryGlobalName: "solid-header",
                   shareScope: "default",
                 },
               },
@@ -78,9 +79,9 @@ export default defineConfig(({ mode }) => {
       include: ["./src/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}"],
       reporters: ["default"],
       alias: {
-        "@common-store/auth": resolve(
+        "solid-header/remote-app": resolve(
           __dirname,
-          "./src/__mocks__/@common-store/auth.ts"
+          "./src/__mocks__/solid-header/remote-app.ts"
         ),
       },
     },

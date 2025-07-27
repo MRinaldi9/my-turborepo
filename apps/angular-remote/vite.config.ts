@@ -10,7 +10,7 @@ export default defineConfig({
       filename: "remoteEntry.js",
       name: "remote",
       exposes: {
-        "./remote-app": "./src/app.routes.ts",
+        "./remote-app": "./src/app.ts",
       },
       shared: {
         rxjs: "rxjs",
@@ -27,6 +27,10 @@ export default defineConfig({
         },
         "@angular/platform-browser-dynamic": {
           name: "@angular/platform-browser-dynamic",
+          singleton: true,
+        },
+        "@angular/common/http": {
+          name: "@angular/common/http",
           singleton: true,
         },
       },

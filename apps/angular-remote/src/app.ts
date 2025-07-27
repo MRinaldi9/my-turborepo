@@ -1,7 +1,7 @@
-import { APP_BASE_HREF } from "@angular/common";
 import { Component, inject } from "@angular/core";
 import { Router, RouterLink, RouterOutlet } from "@angular/router";
-
+import homeRoutes from "./app.routes";
+import { listen } from "@repo/orchestrator";
 @Component({
   selector: "app-root",
   imports: [RouterOutlet, RouterLink],
@@ -15,6 +15,8 @@ import { Router, RouterLink, RouterOutlet } from "@angular/router";
 export default class App {
   private readonly router = inject(Router);
   constructor() {
-    console.log(this.router);
+    const actualConfigs = this.router.config;
+    this.router.resetConfig([...actualConfigs, ...homeRoutes]);
+    listen("user", (user) => console.log(user));
   }
 }

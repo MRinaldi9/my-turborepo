@@ -1,12 +1,14 @@
+import { httpResource } from "@angular/common/http";
 import { Component, effect } from "@angular/core";
-import { toSignal } from "@angular/core/rxjs-interop";
 import { RouterLink, RouterOutlet } from "@angular/router";
-import { getUser, user$ } from "@common-store/auth";
+import { broadcast } from "@repo/orchestrator";
+import { SolidRender } from "./core/solid-render";
 
 @Component({
   selector: "app-root",
-  imports: [RouterOutlet, RouterLink],
+  imports: [RouterOutlet, RouterLink, SolidRender],
   template: `
+    <div solidRender></div>
     <h1>Host</h1>
     <a routerLink="test">Test</a>
 
@@ -14,9 +16,12 @@ import { getUser, user$ } from "@common-store/auth";
   `,
 })
 export class App {
-  user = toSignal(user$);
+  user = httpResource(() => "https://jsonplaceholder.typicode.com/users/1");
   constructor() {
-    getUser();
-    effect(() => console.log(this.user()));
+    effect(() => {
+      if (this.user.hasValue()) {
+        broadcast("user", this.user.value());
+      }
+    });
   }
 }
